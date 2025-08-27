@@ -23,6 +23,16 @@ h1 {
     margin-bottom: 24px;
     color: #333;
     letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.fade {
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0.3; color: #e74c3c; }
+    100% { opacity: 1; color: #333; }
 }
 .controls {
     margin-bottom: 18px;
@@ -36,10 +46,14 @@ button {
     background: #e74c3c;
     color: #fff;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, opacity 0.2s;
 }
-button:hover {
+button:hover:enabled {
     background: #c0392b;
+}
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 #session-info {
     color: #888;
